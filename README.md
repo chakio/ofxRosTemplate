@@ -39,7 +39,7 @@ openFrameworks上でROSが使用できるようにすることで、ROS上のデ
     cd oF用のワークスペース/
     git clone https://github.com/chakio/ofxRosTemplate.git
  ダウンロードしたテンプレートがひとつのプロジェクトになります。
- テンプレートを改変しながら開発を進めてください。
+ テンプレートを改変しながら開発を進めてください。  
  vscode_oF.code-workspace をvscodeで開きます。  
  binの中に、ofAppやmainなどがあります。  
  buildなどはvscodeで行います。（Ctrl + Shift + b）
