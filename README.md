@@ -43,7 +43,7 @@ openFrameworks上でROSが使用できるようにすることで、ROS上のデ
  vscode_oF.code-workspace をvscodeで開きます。  
  binの中に、ofAppやmainなどがあります。  
  buildなどはvscodeで行います。（Ctrl + Shift + b）
- 正しくbuildを行うため以下の設定が必要です。
+ 正しくbuildを行うため以下の設定が必要です。  
  * ofの場所を教えてあげる  
      Makefileの９行目 OF_ROOTのパスを正しく設定
  * buildの設定をReleaseにする  
