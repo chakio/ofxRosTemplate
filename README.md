@@ -51,6 +51,15 @@ openFrameworks上でROSが使用できるようにすることで、ROS上のデ
      16行目を"Release"に変更
  これでbuildが通るはずです。
 
+### ROSで使用するライブラリの設定
+
+#### config.makeの147~150の改変
+    ros_libs = $(shell pkg-config --libs roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf pcl_conversions pcl_ros)    
+    ros_libs_nocolon = $(subst -l:,,$(ros_libs))    
+    PROJECT_OPTIMIZATION_CFLAGS_DEBUG = `pkg-config --cflags roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf pcl_conversions pcl_ros` -w -O2      
+    PROJECT_OPTIMIZATION_CFLAGS_RELEASE = `pkg-config --cflags roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf pcl_conversions pcl_ros` -w -O2    
+必要なライブラリを追加してください
+
 ## Useage
 * ```roscore```  
 カレントディレクトリを  
