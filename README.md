@@ -7,7 +7,7 @@ openFrameworks上でROSを使用します。
 ROSで開発をすすめる際、RVizのみでは描画したいデータが描画しきれない場合が多々あると思います。  
 openFrameworks上でROSが使用できるようにすることで、ROS上のデータをopenFrameworksで描画することを実現します。
 
-## Environment
+## Requirement
 * OS : Ubuntu 16.04
 * ROS : kinetic  
 * openFrameworks :   v0.10.0
@@ -60,9 +60,15 @@ openFrameworks上でROSが使用できるようにすることで、ROS上のデ
     PROJECT_OPTIMIZATION_CFLAGS_RELEASE = `pkg-config --cflags roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf pcl_conversions pcl_ros` -w -O2    
 必要なライブラリを追加してください
 
-## Useage
+## Usage
 * ```roscore```  
 カレントディレクトリを  
 ``` oF用のワークスペース/ofxRosTemplate/```  
 に移動した後に  
 * ```./bin/ofRosTemplate```
+
+## Lisence
+[MIT](https://github.com/chakio/ofxRosTemplate/blob/master/LICENSE)
+
+## Author
+[chakio](https://github.com/chakio)
