@@ -1,14 +1,18 @@
 #pragma once
-
-#include "ofMain.h"
-#include <ros/ros.h>
-#include <std_msgs/String.h>
-
+//C++ include
 #include <iostream>
 #include <sstream>
 #include <string>
 
+//oF include
+#include "ofMain.h"
+
+//ROS include
+#include <ros/ros.h>
+#include <std_msgs/String.h>
+
 using namespace std;
+
 class ofApp : public ofBaseApp{
 
 	public:
