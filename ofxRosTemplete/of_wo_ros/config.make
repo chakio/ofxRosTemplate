@@ -6,9 +6,9 @@
 ################################################################################
 # OF ROOT
 #   The location of your root openFrameworks installation
-#       (default) OF_ROOT = ../../.. 
+#       (default) OF_ROOT = ../../../../of_v0.11.2_linux64gcc6_release 
 ################################################################################
-# OF_ROOT = ../../..
+OF_ROOT = /of_v0.11.2_linux64gcc6_release
 
 ################################################################################
 # PROJECT ROOT
@@ -70,13 +70,12 @@
 #		(default) PROJECT_LDFLAGS = -Wl,-rpath=./libs
 #
 #   Note: Leave a leading space when adding list items with the += operator
-################################################################################
-
+#
 # Currently, shared libraries that are needed are copied to the 
 # $(PROJECT_ROOT)/bin/libs directory.  The following LDFLAGS tell the linker to
 # add a runtime path to search for those shared libraries, since they aren't 
 # incorporated directly into the final executable application binary.
-# TODO: should this be a default setting?
+################################################################################
 # PROJECT_LDFLAGS=-Wl,-rpath=./libs
 
 ################################################################################
@@ -140,11 +139,3 @@
 ################################################################################
 # PROJECT_CXX = 
 # PROJECT_CC = 
-
-
-PROJECT_LDFLAGS=-Wl,-rpath=./libs
-PROJECT_LDFLAGS+=$(SUBLIBS) $(ros_libs_nocolon) 
-ros_libs = $(shell pkg-config --libs roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf)
-ros_libs_nocolon = $(subst -l:,,$(ros_libs))
-PROJECT_OPTIMIZATION_CFLAGS_DEBUG = `pkg-config --cflags roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf` -w -O2  
-PROJECT_OPTIMIZATION_CFLAGS_RELEASE = `pkg-config --cflags roscpp nav_msgs geometry_msgs std_msgs sensor_msgs tf` -w -O2 
