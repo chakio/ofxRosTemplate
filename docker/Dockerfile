@@ -39,14 +39,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
    usbutils \
    sudo \
    python3-pip \
-   libusb-1.0-0-dev
+   libusb-1.0-0-dev \
+   dbus-x11
 
 #######################################################################
 ##                           install font                            ##
 #######################################################################
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections 
 RUN apt-get update && apt-get install -y ttf-mscorefonts-installer \
-   msttcorefonts -qq 
+    ttf-ubuntu-font-family \
+    msttcorefonts -qq
 
 RUN python3 -m pip install --upgrade pip
 RUN apt-get install  -y python3-ruamel.yaml
